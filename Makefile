@@ -1,5 +1,5 @@
 all:
-	ghc --make main.hs
+	ghc --make main.hs -o collatzGraph
 
 clean:
-	rm -f main main.hi main.o
+	rm -f collatzGraph main.hi main.o Lib.hi Lib/Lib.hi Lib/Lib.o
