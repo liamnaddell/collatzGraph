@@ -1,4 +1,5 @@
 import Data.List
+
 main = do
     putStrLn "Please input a number to collatz and graph"
     c <- getLine
