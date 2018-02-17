@@ -1,6 +1,7 @@
 module Lib.Lib 
     ( collatz
-    , aintToAstring
+    , markByLargest
+    , markByFirst
     ) where
 collatz :: Int -> [Int]
 collatz 1 = [1]
@@ -24,14 +25,22 @@ removeIndex :: [Int] -> Int -> [Int]
 removeIndex xs n = fst notGlued ++ snd notGlued
     where notGlued = (take (n-1) xs, drop n xs)
 
-aintToAstring :: [Int] -> [String]
-aintToAstring [1] = ["."]
-aintToAstring [] = ["."]
-aintToAstring xs = turnIntIntoDots(fst currentTuple):aintToAstring(newArray)
+markByLargest :: [Int] -> [String]
+markByLargest [1] = ["."]
+markByLargest [] = ["."]
+markByLargest xs = turnIntIntoDots(fst currentTuple):markByLargest(newArray)
     where newArray = removeLargestElement xs
           currentTuple = getLargest (0,0) xs 0
+
+markByFirst :: [Int] -> [String]
+markByFirst [] = []
+markByFirst xs = dots:markByFirst(newList)
+      where len = (length xs)-1
+            newList = tail xs
+            dots = turnIntIntoDots(head xs)
 
 removeLargestElement :: [Int] -> [Int]
 removeLargestElement xs = removeIndex xs ((snd largest)+1)
     where largest = getLargest (0,0) xs 0
+
 
