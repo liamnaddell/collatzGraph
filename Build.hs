@@ -22,4 +22,4 @@ main = shakeArgs shakeOptions{shakeFiles="_build"} $ do
 
     "_build/Main.o" %> \out -> do
         need ["_build/Lib.o"]
-        cmd "ghc _build/Lib.o Main.hs -c -o _build/Main.o"
+        cmd "ghc  Main.hs -c -o _build/Main.o"
