@@ -15,7 +15,7 @@ firstGraph = do
     let dotArray = Lib.markByFirst(collatzArray)
     mapM putStrLn dotArray
     -- wont compile with out this b/c it returns an array of io actions
-    putStr ""
+    return()
 
 sizeGraph = do
     putStrLn "Please input a number to collatz and graph by size"
@@ -23,10 +23,9 @@ sizeGraph = do
     let intc = read c :: Int
     let collatzArray = Lib.collatz intc
     print collatzArray
-    let dotArray = Lib.markByLargest(collatzArray)
+    let dotArray = Lib.markByLargest collatzArray
     mapM putStrLn dotArray
-    -- wont compile with out this b/c it returns an array of io actions
-    putStr ""
+    return ()
 
 printUsage = do
     let usage = "USAGE:\n   ./collatzArray [gbf|gbs]\n     gbf is graph by first(more informative)\n     gbs is graph by size"

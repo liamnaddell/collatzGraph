@@ -6,7 +6,7 @@ module Lib.Lib
 collatz :: Int -> [Int]
 collatz 1 = [1]
 collatz n
-  | even n = n:collatz(n `div` 2)
+  | even n = n:collatz( n `div` 2)
   | odd n = n:collatz(3*n+1)
 
 getLargest :: (Int,Int) -> [Int] -> Int -> (Int,Int)
@@ -19,7 +19,7 @@ getLargest (a,b) n x
 turnIntIntoDots :: Int -> String
 turnIntIntoDots 0 = ['.']
 turnIntIntoDots 1 = ['.']
-turnIntIntoDots x = ' ':turnIntIntoDots(x-1)
+turnIntIntoDots x = ' ':turnIntIntoDots (x-1)
 
 removeIndex :: [Int] -> Int -> [Int]
 removeIndex xs n = fst notGlued ++ snd notGlued
