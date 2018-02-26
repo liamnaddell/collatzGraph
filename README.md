@@ -4,8 +4,12 @@ Graphs collatz functions, for more info, read the man page contained in this rep
 
 # Install:
 
-runhaskell Build.hs
+`make`
 
 # Run:
 
 the executable would be in `_build/collatzGraph`
+
+# Clean:
+
+`make clean`
